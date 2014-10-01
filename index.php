@@ -7,7 +7,7 @@ include("config.php");
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title><?php echo($global_platform['name']);?> - Home</title>
+        <title>Home - <?php echo($global_platform['name']);?></title>
         <link rel="stylesheet" href="css/foundation.css" />
         <script src="js/vendor/modernizr.js"></script>
     </head>
@@ -64,10 +64,11 @@ include("config.php");
                 <!--<h1><?php echo($global_platform['name']);?></h1>-->
                 <ul class="off-canvas-list">
                     <li><label>My account</label></li>
-                    <li><a>Profile</a></li>
-                    <li><a>Channel</a></li>
+                    <li><a href="account/profile.php"><?php echo($lang['profile']);?></a></li>
+                    <li><a>Channels</a></li>
                     <li><a>Events</a></li>
                     <li><a>Team</a></li>
+                    <li><a href="account/rank.php">Rank</a></li>
                     <li><a>Options</a></li>
                 </ul>
             </aside>
@@ -120,7 +121,6 @@ include("config.php");
                         <a href="#" data-reveal-id="livemodal2">More about this live</a>
                       </div>
                     </div>
-                    
                 </div>
               </div>
             </div>

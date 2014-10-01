@@ -16,6 +16,7 @@ $global_platform['version']="1.0";
 $global_platform['description']="Open livestream platform is platform developped with PHP/MySql to create, manage and edit livestreams";
 //Lang file
 $global_platform['lang_file']="lang/en_EN.php";
+include("lang/en_EN.php");
 
 //Easy games integration
 
