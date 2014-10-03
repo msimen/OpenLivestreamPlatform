@@ -32,13 +32,29 @@ include("config.php");
                 <li class="has-dropdown">
                     <a href="#">Channels</a>
                     <ul class="dropdown">
-                        <li><a href="#">First link in dropdown</a></li>
-                        <li class="active"><a href="#">Active link in dropdown</a></li>
+                        <?php
+                        $req = mysql_query('SELECT * FROM olp_channels WHERE type="main" ORDER BY id DESC LIMIT 0, 5');
+                        while ($global_channels_list = mysql_fetch_array($req))
+                        {
+                        ?>
+                        <li><a href="watch.php?id=<?php echo($global_channels_list['id']);?>"><?php echo($global_channels_list['name']);?></a></li>
+                        <?php
+                        }
+                        ?>
+                        <!--<li><a href="#">First link in dropdown</a></li>
+                        <li class="active"><a href="#">Active link in dropdown</a></li>-->
                         <li class="has-dropdown">
-                        <a href="#">Other channels</a>
+                        <a href="#">Streamers's channels</a>
                         <ul class="dropdown">
-                            <li><a href="#">Minecraft</a></li>
-                            <li><a href="#">Minecraft</a></li>
+                            <?php
+                            $req = mysql_query('SELECT * FROM olp_channels WHERE type="streamer" ORDER BY id DESC LIMIT 0, 5');
+                            while ($global_channels_list = mysql_fetch_array($req))
+                            {
+                            ?>
+                            <li><a href="watch.php?id=<?php echo($global_channels_list['id']);?>"><?php echo($global_channels_list['name']);?></a></li>
+                            <?php
+                            }
+                            ?>
                         </ul>
                         </li>
                     </ul>
@@ -80,11 +96,20 @@ include("config.php");
               <div class="small-11 small-centered columns">
                 <br/>
                 <div class="alerts">
+                    <?php if(isset($_GET['source']) and $_GET['source']=="login_0") {?>
                     <div data-alert class="alert-box">
                       <h4>You are connected</h4>
                       <p>It's a little ostentatious, but useful for important content.</p>
                     <a href="#" class="close">&times;</a>
                     </div>
+                    <?php }?>
+                    <?php if(isset($global_user['username'])) {?>
+                    <div data-alert class="alert-box">
+                      <h4>Welcome, <?php echo($global_user['username']);?></h4>
+                      <p>You are connected</p>
+                    <a href="#" class="close">&times;</a>
+                    </div>
+                    <?php }?>
                     <div data-alert class="alert-box secondary">
                       <h5>This site uses HTML5 and CSS3</h5>
                       <p>If your browser don't support them, please update.</p>
@@ -103,6 +128,7 @@ include("config.php");
                     <h1 id="header-welcome">Welcome to <?php echo($global_platform['name']);?> <span class="label [radius round]"><?php echo($global_platform['version']);?></span></h1>
                     <p id="header-description"><?php echo($global_platform['description']);?></p>
                 </header>
+                <!--Lives modal-->
                 <div class="lives modals">
                     <div id="livemodal1" class="reveal-modal" data-reveal>
                       <h2>Name of your livestream</h2>
@@ -111,6 +137,7 @@ include("config.php");
                       <a class="close-reveal-modal">&#215;</a>
                     </div>
                 </div>
+                <!--Live list-->
                 <div class="lives list">
                     <div class="row" data-equalizer>
                       <div id="live_1" class="large-6 columns panel" data-equalizer-watch>
@@ -119,8 +146,13 @@ include("config.php");
                         <a href="#" data-reveal-id="livemodal1">More about this live</a>
                       </div>
                       <div id="live_2" class="large-6 columns panel" data-equalizer-watch>
+                        <?php
+                        $dnn = mysql_fetch_array(mysql_query('SELECT * from olp_users where id="1"'));
+                        $username = htmlentities($dnn['surname'], ENT_QUOTES, 'UTF-8');
+                        
+                        ?>
                         <h2>Name of your livestream</h2>
-                        <p class="lead">By <b>Your username</b></p>
+                        <p class="lead">By <b>Your username<?php echo($global_user['name']);?><?php echo($global_user['rank']);?></b></p>
                         <a href="#" data-reveal-id="livemodal2">More about this live</a>
                       </div>
                     </div>
