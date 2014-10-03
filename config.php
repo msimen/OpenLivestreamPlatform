@@ -10,7 +10,8 @@ session_start();
 //MySql database connection
 mysql_connect('localhost', 'root', '') or die("Error connection");
 mysql_select_db('openlivestreamplatform') or die("Database error");
-
+//Author's config file (include passwords)
+include("dev/JORYS55.php");
 //New messages checker
 
 //Name of your livestream platform
