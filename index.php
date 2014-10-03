@@ -33,7 +33,7 @@ include("config.php");
                     <a href="#">Channels</a>
                     <ul class="dropdown">
                         <?php
-                        $req = mysql_query('SELECT * FROM olp_channels WHERE type="main" ORDER BY id DESC LIMIT 0, 5');
+                        $req = mysql_query('SELECT * FROM olp_channels WHERE type="main" ORDER BY id LIMIT 0, 10');
                         while ($global_channels_list = mysql_fetch_array($req))
                         {
                         ?>
@@ -47,7 +47,7 @@ include("config.php");
                         <a href="#">Streamers's channels</a>
                         <ul class="dropdown">
                             <?php
-                            $req = mysql_query('SELECT * FROM olp_channels WHERE type="streamer" ORDER BY id DESC LIMIT 0, 5');
+                            $req = mysql_query('SELECT * FROM olp_channels WHERE type="streamer" ORDER BY id');
                             while ($global_channels_list = mysql_fetch_array($req))
                             {
                             ?>
