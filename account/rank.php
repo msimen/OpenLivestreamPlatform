@@ -26,25 +26,12 @@ include("../config.php");
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-              <li class="has-dropdown">
-                <a href="#">Channels</a>
-                <ul class="dropdown">
-                  <li><a href="#">First link in dropdown</a></li>
-                  <li class="active"><a href="#">Active link in dropdown</a></li>
-                  <li class="has-dropdown">
-                    <a href="#">Other channels</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Minecraft</a></li>
-                        <li><a href="#">Minecraft</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
+                <li><a href="../index.php">Back to main page</a></li>
             </ul>
             <!-- Left Nav Section -->
             <ul class="left">
-              <li><a href="../index.php">Home</a></li>
-              <li class="active"><a href="#">Rank</a></li>
+                <li><a href="../index.php">Home</a></li>
+                <li class="active"><a href="#">Rank</a></li>
             </ul>
           </section>
         </nav>

@@ -5,6 +5,8 @@ Github source-code : https://github.com/Jorys-Paulin/openlivestreamplatform/
 */
 
 //MySql database connection
+//mysql_connect('localhost', 'root', '') or die("Error connection");
+//mysql_select_db('openlivestreamplatform') or die("Database error");
 
 //New messages checker
 
@@ -32,4 +34,13 @@ $global_games['lol_server']="Adress of the public server of your platform";
 //Watchdogs
 $global_games['wd_enabled']=FALSE;
 $global_games['wd_server']="Adress of the public server of your platform";
+
+//User informations
+/*function updateSession() {
+    return($_SESSION);
+}
+
+function getRank($userid) {
+    return($rank);
+}*/
 ?>
