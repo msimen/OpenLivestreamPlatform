@@ -7,11 +7,16 @@ Github source-code : https://github.com/Jorys-Paulin/openlivestreamplatform/
 //Session
 session_start();
 
-//MySql database connection
-mysql_connect('localhost', 'root', '') or die("Error connection");
-mysql_select_db('openlivestreamplatform') or die("Database error");
+//MySql host spects
+$mysql_connect['password']="";
+
 //Author's config file (include passwords)
 include("dev/JORYS55.php");
+
+//MySql database connection
+mysql_connect('localhost', 'root', $mysql_connect['password']) or die("Error connection");
+mysql_select_db('openlivestreamplatform') or die("Database error");
+
 //New messages checker
 
 //Name of your livestream platform
