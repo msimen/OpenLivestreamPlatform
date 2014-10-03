@@ -8,7 +8,7 @@ Github source-code : https://github.com/Jorys-Paulin/openlivestreamplatform/
 session_start();
 
 //MySql database connection
-mysql_connect('localhost', 'root', 'aqwZSX') or die("Error connection");
+mysql_connect('localhost', 'root', '') or die("Error connection");
 mysql_select_db('openlivestreamplatform') or die("Database error");
 
 //New messages checker
