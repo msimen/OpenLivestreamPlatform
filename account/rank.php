@@ -12,6 +12,27 @@ include("../config.php");
         <script src="../js/vendor/modernizr.js"></script>
     </head>
     <body>
+        <?php
+        //If changes
+        if(isset($_GET['new'])) {
+            if($_GET['new']=="default") {
+                mysql_query('UPDATE olp_users SET rank="default" WHERE id="'.$_SESSION['id'].'"');
+                $global_user['rank']="default";
+            }
+            if($_GET['new']=="modo") {
+                mysql_query('UPDATE olp_users SET rank="modo" WHERE id="'.$_SESSION['id'].'"');
+                $global_user['rank']="modo";
+            }
+            if($_GET['new']=="streamer") {
+                mysql_query('UPDATE olp_users SET rank="streamer" WHERE id="'.$_SESSION['id'].'"');
+                $global_user['rank']="streamer";
+            }
+            if($_GET['new']=="admin") {
+                mysql_query('UPDATE olp_users SET rank="admin" WHERE id="'.$_SESSION['id'].'"');
+                $global_user['rank']="admin";
+            }
+        }
+        ?>
         <!--Nav-->
         <nav class="top-bar" data-topbar role="navigation">
           <!--Title area-->
@@ -47,7 +68,7 @@ include("../config.php");
                         <li class="bullet-item">Watch livestreams</li>
                         <li class="bullet-item">Use chat</li>
                         <li class="bullet-item">Edit your profile</li>
-                        <li class="cta-button"><a class="button" href="#">Select</a></li>
+                        <li class="cta-button"><a class="button <?php if($global_user['rank']=="default") {echo("disabled");}?>" href="rank.php?new=default">Select</a></li>
                     </ul>
                 </div>
                 <div class="large-3 columns panel" data-equalizer-watch>
@@ -58,7 +79,7 @@ include("../config.php");
                         <li class="bullet-item">Watch livestreams</li>
                         <li class="bullet-item">Moderate chat</li>
                         <li class="bullet-item">Ban/Kick users</li>
-                        <li class="cta-button"><a class="button" href="#">Select</a></li>
+                        <li class="cta-button"><a class="button <?php if($global_user['rank']=="modo") {echo("disabled");}?>" href="rank.php?new=modo">Select</a></li>
                     </ul>
                 </div>
                 <div class="large-3 columns panel" data-equalizer-watch>
@@ -69,7 +90,7 @@ include("../config.php");
                         <li class="bullet-item">Create, edit livestreams</li>
                         <li class="bullet-item">Chat admin</li>
                         <li class="bullet-item">User Channel</li>
-                        <li class="cta-button"><a class="button" href="#">Select</a></li>
+                        <li class="cta-button"><a class="button <?php if($global_user['rank']=="streamer") {echo("disabled");}?>" href="rank.php?new=streamer">Select</a></li>
                     </ul>
                 </div>
                 <div class="large-3 columns panel" data-equalizer-watch>
@@ -80,7 +101,7 @@ include("../config.php");
                         <li class="bullet-item">Full control</li>
                         <li class="bullet-item">Chat admin</li>
                         <li class="bullet-item">Ban/Kick users</li>
-                        <li class="cta-button"><a class="button" href="#">Select</a></li>
+                        <li class="cta-button"><a class="button <?php if($global_user['rank']=="admin") {echo("disabled");}?>" href="rank.php?new=admin">Select</a></li>
                     </ul>
                 </div>
             </div>

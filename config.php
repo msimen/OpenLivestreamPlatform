@@ -48,7 +48,7 @@ $global_games['wd_server']="Adress of the public server of your platform";
 $_SESSION['id']=1;
 //Get informations
 $global_user = mysql_fetch_array(mysql_query('SELECT * FROM olp_users WHERE id="'.$_SESSION['id'].'"'));
-$global_user['rank']=getRank(1);
+$global_user['rank']=getRank($_SESSION['id']);
 
 //Update sessions
 function updateSession() {

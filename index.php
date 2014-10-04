@@ -127,7 +127,7 @@ include("config.php");
                 <header>
                     <h1 id="header-welcome">Welcome to <?php echo($global_platform['name']);?> <span class="label [radius round]"><?php echo($global_platform['version']);?></span></h1>
                     <p id="header-description"><?php echo($global_platform['description']);?></p>
-                </header>
+                </header><br/><br/>
                 <!--Lives modal-->
                 <div class="lives modals">
                     <div id="livemodal1" class="reveal-modal" data-reveal>
@@ -140,21 +140,22 @@ include("config.php");
                 <!--Live list-->
                 <div class="lives list">
                     <div class="row" data-equalizer>
-                      <div id="live_1" class="large-6 columns panel" data-equalizer-watch>
-                        <h2>Name of your livestream</h2>
-                        <p class="lead">By <b>Your username</b></p>
-                        <a href="#" data-reveal-id="livemodal1">More about this live</a>
-                      </div>
-                      <div id="live_2" class="large-6 columns panel" data-equalizer-watch>
                         <?php
-                        $dnn = mysql_fetch_array(mysql_query('SELECT * from olp_users where id="1"'));
-                        $username = htmlentities($dnn['surname'], ENT_QUOTES, 'UTF-8');
-                        
+                        $req = mysql_query('SELECT * FROM olp_livestreams ORDER BY id LIMIT 0, 10');
+                        while ($global_live_list = mysql_fetch_array($req))
+                        {
                         ?>
-                        <h2>Name of your livestream</h2>
-                        <p class="lead">By <b>Your username<?php echo($global_user['name']);?><?php echo($global_user['rank']);?></b></p>
-                        <a href="#" data-reveal-id="livemodal2">More about this live</a>
-                      </div>
+                        <div id="live_<?php echo($global_live_list['id']);?>" class="large-6 columns panel" data-equalizer-watch>
+                            <h2><?php echo($global_live_list['name'])?></h2>
+                            <?php
+                                $global_live_list_streamer = mysql_fetch_array(mysql_query('SELECT username FROM olp_users WHERE id="'.$global_live_list['streamer'].'"'));
+                            ?>
+                            <p class="lead">By <b><?php echo($global_live_list_streamer['username']);?></b></p>
+                            <a href="#" data-reveal-id="livemodal1">More about this live</a>
+                        </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
               </div>
