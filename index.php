@@ -7,7 +7,7 @@ include("config.php");
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Home - <?php echo($global_platform['name']);?></title>
+        <title><?php echo($lang['home']);?> - <?php echo($global_platform['name']);?></title>
         <link rel="stylesheet" href="css/foundation.css" />
         <script src="js/vendor/modernizr.js"></script>
     </head>
