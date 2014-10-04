@@ -28,9 +28,9 @@ include("config.php");
             <ul class="right">
                 <li><a href="streamers.php">Streamers</a></li>
                 <li><a href="livestreams.php">Livestreams</a></li>
-                <li><a href="about.php">About</a></li>
+                <li><a href="about.php"><?php echo($lang['about']);?></a></li>
                 <li class="has-dropdown">
-                    <a href="#">Channels</a>
+                    <a href="#"><?php echo($lang['channels']);?></a>
                     <ul class="dropdown">
                         <?php
                         $req = mysql_query('SELECT * FROM olp_channels WHERE type="main" ORDER BY id LIMIT 0, 10');
@@ -62,7 +62,7 @@ include("config.php");
             </ul>
             <!-- Left Nav Section -->
             <ul class="left">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><a href="#"><?php echo($lang['home']);?></a></li>
             </ul>
           </section>
         </nav>
@@ -82,13 +82,13 @@ include("config.php");
             <aside class="left-off-canvas-menu">
                 <!--<h1><?php echo($global_platform['name']);?></h1>-->
                 <ul class="off-canvas-list">
-                    <li><label>My account</label></li>
+                    <li><label><?php echo($lang['myaccount']);?></label></li>
                     <li><a href="account/profile.php"><?php echo($lang['profile']);?></a></li>
-                    <li><a>Channels</a></li>
-                    <li><a>Events</a></li>
-                    <li><a>Team</a></li>
-                    <li><a href="account/rank.php">Rank</a></li>
-                    <li><a>Options</a></li>
+                    <li><a href="channels.php"><?php echo($lang['channels']);?></a></li>
+                    <li><a><?php echo($lang['events']);?></a></li>
+                    <li><a><?php echo($lang['team']);?></a></li>
+                    <li><a href="account/rank.php"><?php echo($lang['rank']);?></a></li>
+                    <li><a href="account/settings.php"><?php echo($lang['options']);?></a></li>
                 </ul>
             </aside>
             <!-- Content -->
@@ -105,13 +105,13 @@ include("config.php");
                     <?php }?>
                     <?php if(isset($global_user['username'])) {?>
                     <div data-alert class="alert-box">
-                      <h4>Welcome, <?php echo($global_user['username']);?></h4>
-                      <p>You are connected</p>
+                      <h4><?php echo($lang['welcome']);?>, <?php echo($global_user['username']);?></h4>
+                      <p><?php echo($lang['youareconnected']);?></p>
                     <a href="#" class="close">&times;</a>
                     </div>
                     <?php }?>
                     <div data-alert class="alert-box secondary">
-                      <h5>This site uses HTML5 and CSS3</h5>
+                      <h5><?php echo($lang['thisisteuseshtml5css3']);?></h5>
                       <p>If your browser don't support them, please update.</p>
                       <a href="#" class="close">&times;</a>
                     </div>
@@ -125,7 +125,7 @@ include("config.php");
                     </div>-->
                 </div>
                 <header>
-                    <h1 id="header-welcome">Welcome to <?php echo($global_platform['name']);?> <span class="label [radius round]"><?php echo($global_platform['version']);?></span></h1>
+                    <h1 id="header-welcome"><?php echo($lang['welcome']);?> to <?php echo($global_platform['name']);?> <span class="label [radius round]"><?php echo($global_platform['version']);?></span></h1>
                     <p id="header-description"><?php echo($global_platform['description']);?></p>
                 </header><br/><br/>
                 <!--Lives modal-->

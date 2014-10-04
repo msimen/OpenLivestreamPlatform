@@ -47,12 +47,12 @@ include("../config.php");
           <section class="top-bar-section">
             <!-- Right Nav Section -->
             <ul class="right">
-                <li><a href="../index.php">Back to main page</a></li>
+                <li><a href="../index.php"><?php echo($lang['backtomainpage']);?></a></li>
             </ul>
             <!-- Left Nav Section -->
             <ul class="left">
-                <li><a href="../index.php">Home</a></li>
-                <li class="active"><a href="#">Rank</a></li>
+                <li><a href="../index.php"><?php echo($lang['home']);?></a></li>
+                <li class="active"><a href="#"><?php echo($lang['rank']);?></a></li>
             </ul>
           </section>
         </nav>

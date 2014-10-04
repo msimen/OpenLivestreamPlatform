@@ -9,11 +9,24 @@ $global_platform['version']="1.0";
 $global_platform['description']="Open livestream platform est une plateforme développée avec PHP/MySql qui permet de créer, gérer et editer des lives en direct";
 
 //Lang
+//Basic words
+$lang['home']="Home";
+$lang['welcome']="Bienvenue";
 $lang['my_account']="Mon compte";
 $lang['rank']="Grade";
 $lang['team']="Equipe";
 $lang['channels']="Chaines";
 $lang['options']="Options";
+$lang['about']="A propos";
 $lang['events']="Evenements";
 $lang['profile']="Profil";
+$lang['connected']="Connécté";
+$lang['login']="Se connecter";
+//Sections
+$lang['myaccount']="Mon compte";
+//Phrases
+$lang['backtomainpage']="Retour à la page principale";
+$lang['beenconnected']="Vous avez bien été connécté";
+$lang['youareconnected']="Vous êtes connécté";
+$lang['thisisteuseshtml5css3']="Ce site utilise HTML5 et CSS3";
 ?>
