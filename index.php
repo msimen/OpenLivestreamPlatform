@@ -95,6 +95,7 @@ include("config.php");
             <div class="row">
               <div class="small-11 small-centered columns">
                 <br/>
+                <!--Alerts-->
                 <div class="alerts">
                     <?php if(isset($_GET['source']) and $_GET['source']=="login_0") {?>
                     <div data-alert class="alert-box">
@@ -124,10 +125,35 @@ include("config.php");
                       <p>If your browser don't support them, please update.</p>
                     </div>-->
                 </div>
-                <header>
-                    <h1 id="header-welcome"><?php echo($lang['welcome']);?> to <?php echo($global_platform['name']);?> <span class="label [radius round]"><?php echo($global_platform['version']);?></span></h1>
-                    <p id="header-description"><?php echo($global_platform['description']);?></p>
-                </header><br/><br/>
+                <!--Home slideshow-->
+                <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		        <link rel="stylesheet" type="text/css" href="css/component.css" />
+                <script src="js/modernizr.custom.js"></script>
+                <div class="slideshow" id="slideshow">
+			        <ol class="slides">
+				        <li class="current">
+					        <div class="description">
+						        <h2><?php echo($lang['welcome']);?> to <?php echo($global_platform['name']);?></h2>
+						        <p><?php echo($global_platform['description']);?></p>
+					        </div>
+					        <div class="tiltview col">
+						        <a href="http://grovemade.com/"><iframe frameborder="0" width="443" height="322" src="//www.dailymotion.com/embed/video/x25eyo8" allowfullscreen></iframe></a>
+						        <a href="https://tsovet.com/"><img src="../img/2_screen.jpg"/></a>
+					        </div>
+				        </li>
+				        <li>
+					        <div class="description">
+						        <h2>CSS Animations</h2>
+						        <p>We are using 12 different animations for showing and hiding the items of a slide. The animations are defined by randomly adding data-attributes called <code>data-effect-in</code> and <code>data-effect-out</code> for every slide. </p>
+					        </div>
+					        <div class="tiltview row">
+						        <a href="http://pexcil.com/"><img src="../img/3_mobile.jpg"/></a>
+						        <a href="http://foodsense.is/"><img src="../img/4_mobile.jpg"/></a>
+					        </div>
+				        </li>
+			        </ol>
+		        </div>
                 <!--Lives modal-->
                 <div class="lives modals">
                     <div id="livemodal1" class="reveal-modal" data-reveal>
@@ -165,6 +191,11 @@ include("config.php");
           </div>
         </div>
         <!--Scripts-->
+        <script src="js/classie.js"></script>
+		<script src="js/tiltSlider.js"></script>
+        <script>
+			new TiltSlider(document.getElementById('slideshow'));
+		</script>
         <script src="js/vendor/jquery.js"></script>
         <script src="js/foundation.min.js"></script>
         <script src="js/foundation/foundation.topbar.js"></script>
