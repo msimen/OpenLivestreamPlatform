@@ -93,7 +93,7 @@ include("config.php");
             </aside>
             <!-- Content -->
             <div class="row">
-              <div class="small-11 small-centered columns">
+              <div class="small-14 small-centered columns">
                 <br/>
                 <!--Alerts-->
                 <div class="alerts">
@@ -126,34 +126,7 @@ include("config.php");
                     </div>-->
                 </div>
                 <!--Home slideshow-->
-                <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-		        <link rel="stylesheet" type="text/css" href="css/component.css" />
-                <script src="js/modernizr.custom.js"></script>
-                <div class="slideshow" id="slideshow">
-			        <ol class="slides">
-				        <li class="current">
-					        <div class="description">
-						        <h2><?php echo($lang['welcome']);?> to <?php echo($global_platform['name']);?></h2>
-						        <p><?php echo($global_platform['description']);?></p>
-					        </div>
-					        <div class="tiltview col">
-						        <a href="http://grovemade.com/"><iframe frameborder="0" width="443" height="322" src="//www.dailymotion.com/embed/video/x25eyo8" allowfullscreen></iframe></a>
-						        <a href="https://tsovet.com/"><img src="../img/2_screen.jpg"/></a>
-					        </div>
-				        </li>
-				        <li>
-					        <div class="description">
-						        <h2>CSS Animations</h2>
-						        <p>We are using 12 different animations for showing and hiding the items of a slide. The animations are defined by randomly adding data-attributes called <code>data-effect-in</code> and <code>data-effect-out</code> for every slide. </p>
-					        </div>
-					        <div class="tiltview row">
-						        <a href="http://pexcil.com/"><img src="../img/3_mobile.jpg"/></a>
-						        <a href="http://foodsense.is/"><img src="../img/4_mobile.jpg"/></a>
-					        </div>
-				        </li>
-			        </ol>
-		        </div>
+                <iframe height="680px" width="100%" src="includes/slider_home.php">Chargement...</iframe>
                 <!--Lives modal-->
                 <div class="lives modals">
                     <div id="livemodal1" class="reveal-modal" data-reveal>
