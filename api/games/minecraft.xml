@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<minecraft>
+    <name>Minecraft</name>
+    <description>Minecraft is a sandbox game</description>
+    <logo></logo>
+    <website>www.minecraft.net</website>
+    <creator>Mojang</creator>
+    <media>
+        <logo></logo>
+        <thumbnail></thumbnail>
+        <background></background>
+    </media>
+    <download>www.minecraft.net/download</download>
+    <require>Java</require>
+</minecraft>

@@ -1,0 +1,55 @@
+body {
+}
+
+.channelslistcomponent {
+    height : 150px;
+    width: 280px;
+    background-color: #0094ff;
+    background-size: cover;
+    padding: 5px;
+    margin: 2px;
+    display: inline-block;
+}
+
+.channelslistcomponent h1 {
+    margin: 0px;
+    font-size: 28px;
+}
+
+.channelslistcomponent h4 {
+    margin: 0px;
+    font-size: 15px;
+}
+
+.channelslistcomponent p{
+    max-width: 100%;
+    max-height: 35%;
+    /*word-break: break-word;*/
+    word-break: break-all;
+    overflow: auto;
+    margin: 0px;
+    font-size: 12px;
+}
+
+.channelslistcomponent section.islive {
+    float: right;
+    width: 40%;
+    height: 20%;
+    background-color: #27a4ff;
+    background-color: rgba(47, 167, 255, 0.85);
+    padding-left: 5px;
+    position: relative;
+    right: -5px;
+}
+
+.channelslistcomponent section.islive h3 {
+    font-size: 100%;
+}
+
+.channelslistcomponent section.islive h3.on {
+    color: #b6ff00;
+}
+
+.channelslistcomponent section.islive h3.off {
+    color: #f00;
+}

@@ -1,3 +1,6 @@
+/*Basic imports*/
+@import("style.css");
+
 meta.foundation-version {
   font-family: "/{{ VERSION }}/"; }
 

@@ -22,6 +22,7 @@ $lang['events']="Evenements";
 $lang['profile']="Profil";
 $lang['connected']="Connécté";
 $lang['login']="Se connecter";
+$lang['users']="Users";
 //Sections
 $lang['myaccount']="Mon compte";
 //Phrases

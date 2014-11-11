@@ -20,6 +20,10 @@ $lang['events']="Events";
 $lang['profile']="Profile";
 $lang['connected']="Connected";
 $lang['login']="Login";
+$lang['users']="Users";
+$lang['streamer']="Streamer";
+$lang['streamers']="Streamers";
+$lang['livestreams']="Livestreams";
 //Sections
 $lang['myaccount']="My account";
 //Phrases
