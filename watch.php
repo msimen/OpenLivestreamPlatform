@@ -62,7 +62,7 @@ include("config.php");
             </ul>
             <!-- Left Nav Section -->
             <ul class="left">
-                <li><a href="#"><?php echo($lang['home']);?></a></li>
+                <li><a href="index.php"><?php echo($lang['home']);?></a></li>
                 <li class="active"><a href="#">Watch a channel</a></li>
             </ul>
           </section>

@@ -1,14 +1,13 @@
 <?php
+session_start();
+include("../config.php");
 
+$req = mysql_query('SELECT * FROM olp_channels ORDER BY id');
+while ($text = mysql_fetch_array($req))
+{
+    $tojson .= json_encode($text);
+}
+
+$json = json_encode($tojson);
+echo($json);
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-    </head>
-    <body>
-        
-    </body>
-</html>
