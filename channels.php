@@ -10,6 +10,7 @@ include("config.php");
         <title><?php echo($lang['channels'])?> - <?php echo($global_platform['name'])?></title>
         <link rel="stylesheet" href="css/foundation.css" />
         <link rel="stylesheet" href="css/style.css" />
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="js/vendor/modernizr.js"></script>
     </head>
     <body>
@@ -63,7 +64,8 @@ include("config.php");
             </ul>
             <!-- Left Nav Section -->
             <ul class="left">
-              <li class="active"><a href="#"><?php echo($lang['home']);?></a></li>
+              <li><a href="index.php"><?php echo($lang['home']);?></a></li>
+                <li class="active"><a href="#"><?php echo($lang['channels']);?></a></li>
             </ul>
           </section>
         </nav>
@@ -78,12 +80,12 @@ include("config.php");
                             <form action="channels.php" method="post">
                                 <section>
                                     <label>Select by title
-                                        <input type="text" placeholder="Enter the title of the livestream..." />
+                                        <input type="text" name="title" placeholder="Enter the title of the channel..." />
                                     </label>
                                 </section>
                                 <section>
                                     <label>Select by game
-                                    <select>
+                                    <select name="game">
                                         <option value="all">Everything</option>
                                         <option value="mc">Minecraft</option>
                                         <option value="df">Dofus</option>
@@ -109,7 +111,11 @@ include("config.php");
                     <h1>Channels availaible :</h1>
                     <div class="channelslist">
                         <?php
-                        $req=mysql_query("SELECT * FROM olp_channels");
+                        if(isset($_POST['title']) and $_POST['title']!=NULL) {
+                            $req=mysql_query('SELECT * FROM olp_channels WHERE name="'.$_POST['title'].'"');
+                        } else {
+                            $req=mysql_query("SELECT * FROM olp_channels");
+                        }
                         while ($global_channels_list = mysql_fetch_array($req))
                         {
                         ?>
@@ -123,7 +129,7 @@ include("config.php");
                             <h4>By <i><?php echo($global_channels_list['owner']);?></i></h4>
                             <p><?php echo($global_channels_list['description'])?></p>
                             <section class="islive">
-                                <h3 class="on">Online</h3>
+                                <h3 class="on"><a href="watch.php?id=<?php echo($global_channels_list['id']);?>">Online</a></h3>
                             </section>
                         </section>
                         <?php

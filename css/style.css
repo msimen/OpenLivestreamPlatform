@@ -1,6 +1,7 @@
 body {
 }
 
+/*Channels list*/
 .channelslistcomponent {
     height : 150px;
     width: 280px;
@@ -46,10 +47,56 @@ body {
     font-size: 100%;
 }
 
-.channelslistcomponent section.islive h3.on {
+.channelslistcomponent section.islive h3.on a {
     color: #b6ff00;
 }
 
-.channelslistcomponent section.islive h3.off {
+.channelslistcomponent section.islive h3.off a {
     color: #f00;
+}
+
+/*Games list*/
+.gameslist {
+    
+}
+
+.gameslist .game {
+    height: 200px;
+    width: 150px;
+    background-color: #0094ff;
+    background-size: cover;
+    padding: 5px;
+    margin: 2px;
+    display: inline-block;
+}
+
+.gameslist .game span {
+    color: #fff;
+    text-align: center;
+    float: right;
+    width: 100%;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+.gameslist .game .title {
+    font-size: 18px;
+}
+
+.gameslist .game .author {
+    font-size: 14px;
+}
+
+.gameslist .game .website {
+    font-size: 10px;
+}
+
+.gameslist .game .website a {
+    color: #fff;
+}
+    
+.gameslist .game .description {
+    position: relative;
+    bottom: 0px;
+    max-height: 50%;
+    height: 50%;
 }

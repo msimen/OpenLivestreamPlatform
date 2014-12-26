@@ -9,6 +9,7 @@ include("config.php");
         <meta charset="utf-8" />
         <title>Streamers</title>
         <link rel="stylesheet" href="css/foundation.css" />
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="js/vendor/modernizr.js"></script>
     </head>
     <body>

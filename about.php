@@ -7,8 +7,9 @@ include("config.php");
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Watch - <?php echo($global_platform['name']);?></title>
+        <title><?php echo($lang['about']);?> - <?php echo($global_platform['name']);?></title>
         <link rel="stylesheet" href="css/foundation.css" />
+        <link rel="stylesheet" href="css/style.css" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="js/vendor/modernizr.js"></script>
     </head>
@@ -63,39 +64,44 @@ include("config.php");
             </ul>
             <!-- Left Nav Section -->
             <ul class="left">
-                <li><a href="index.php"><?php echo($lang['home']);?></a></li>
-                <li class="active"><a href="#">Watch a channel</a></li>
+              <li><a href="index.php"><?php echo($lang['home']);?></a></li>
+                <li class="active"><a href="#"><?php echo($lang['about']);?></a></li>
             </ul>
           </section>
         </nav>
         <!--Content-->
         <div class="content">
             <div class="row">
-                <div class="small-12 small-centered columns">
-                    <h1>Watch a livestream - <?php echo($global_platform['name']);?></h1>
-                </div>
-                <div class="small-6 large-7 columns">
-                    <div class="panel">
-                        <h1>Livestream</h1>
-                        <iframe width="560" height="315" src="//www.youtube.com/embed/ZaIfwX3nJ8M" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                                    </div>
-                <div class="small-6 large-5 columns">
-                    <div class="panel">
-                        <h1>Chat</h1>
-                    </div>
+                <div class="small-14 small-centered columns">
+                    <section class="main">
+                        <h1>About <?php echo($global_platform['name']);?></h1>
+                        <p><?php echo($global_platform['description']);?></p>
+                    </section>
+                    <section class="streamers">
+                        <h1>The <?php echo($global_platform['name']);?>'s streamers</h1>
+                    </section>
+                    <section class="games">
+                        <h1>The games</h1>
+                        <p>This is the list of all the games we are playing</p>
+                        <section class="gameslist">
+                            <?php
+                            $req=mysql_query("SELECT * FROM olp_games");
+                            while ($results = mysql_fetch_array($req))
+                            {
+                            ?>
+                            <section class="game" style="background : <?php if($results['poster']!=NULL) { echo("url('".$results['poster']."')");}?>; background-size: cover;">
+                                <span class="title"><?php echo($results['name']);?></span>
+                                <span class="author"><?php echo($results['author']);?></span>
+                                <span class="website"><a href="<?php echo($results['website']);?>"><?php echo($results['website']);?></a></span>
+                                <span class="description"><?php echo($results['description']);?></span>   
+                            </section>
+                            <?php
+                            }
+                            ?>
+                        </section>
+                    </section>
                 </div>
             </div>
         </div>
-        <!--Scripts-->
-        <script src="js/vendor/jquery.js"></script>
-        <script src="js/foundation.min.js"></script>
-        <script src="js/foundation/foundation.topbar.js"></script>
-        <script src="js/foundation/foundation.offcanvas.js"></script>
-        <script src="js/foundation/foundation.joyride.js"></script>
-        <script src="js/vendor/jquery.cookie.js"></script>
-        <script>
-            $(document).foundation();
-        </script>
     </body>
 </html>
