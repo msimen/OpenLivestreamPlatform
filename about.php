@@ -73,14 +73,29 @@ include("config.php");
         <div class="content">
             <div class="row">
                 <div class="small-14 small-centered columns">
-                    <section class="main">
+                    <section id="main" class="main">
                         <h1>About <?php echo($global_platform['name']);?></h1>
                         <p><?php echo($global_platform['description']);?></p>
                     </section>
-                    <section class="streamers">
+                    <section id="streamers" class="streamers">
                         <h1>The <?php echo($global_platform['name']);?>'s streamers</h1>
+                        <p></p>
+                        <section class="streamerslist">
+                            <?php
+                            $req=mysql_query("SELECT * FROM olp_users WHERE rank='streamer' or rank='admin'");
+                            while ($results = mysql_fetch_array($req))
+                            {
+                            ?>
+                            <section class="streamersquare" style="background: <?php if($results['avatar']!=NULL) { echo("url('".$results['avatar']."')");}?>; background-size: cover; ">
+                                <span class="title"><?php echo($results['username']);?></span>
+                                <span>Streamer</span>
+                            </section>
+                            <?php
+                            }
+                            ?>
+                        </section>
                     </section>
-                    <section class="games">
+                    <section id="games" class="games">
                         <h1>The games</h1>
                         <p>This is the list of all the games we are playing</p>
                         <section class="gameslist">
@@ -91,7 +106,7 @@ include("config.php");
                             ?>
                             <section class="game" style="background : <?php if($results['poster']!=NULL) { echo("url('".$results['poster']."')");}?>; background-size: cover;">
                                 <span class="title"><?php echo($results['name']);?></span>
-                                <span class="author"><?php echo($results['author']);?></span>
+                                <span class="author"><?php echo($results['creator']);?></span>
                                 <span class="website"><a href="<?php echo($results['website']);?>"><?php echo($results['website']);?></a></span>
                                 <span class="description"><?php echo($results['description']);?></span>   
                             </section>
@@ -103,5 +118,10 @@ include("config.php");
                 </div>
             </div>
         </div>
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
     </body>
 </html>

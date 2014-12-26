@@ -100,3 +100,30 @@ body {
     max-height: 50%;
     height: 50%;
 }
+
+/*Streamers list*/
+.streamerslist {
+    
+}
+
+.streamerslist .streamersquare {
+    height: 150px;
+    width: 150px;
+    background-color: #0094ff;
+    background-size: cover;
+    padding: 5px;
+    margin: 2px;
+    display: inline-block;
+}
+
+.streamerslist .streamersquare span {
+    color: #fff;
+    text-align: center;
+    float: right;
+    width: 100%;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+}
+
+.streamerslist .streamersquare .title {
+    font-size: 18px;
+}

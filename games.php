@@ -7,7 +7,7 @@ include("config.php");
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title><?php echo($lang['streamers']);?> - <?php echo($global_platform['name']);?></title>
+        <title><?php echo($lang['games']);?> - <?php echo($global_platform['name']);?></title>
         <link rel="stylesheet" href="css/foundation.css" />
         <link rel="stylesheet" href="css/style.css" />
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -73,37 +73,24 @@ include("config.php");
         <div class="content">
             <div class="row">
                 <div class="small-14 small-centered columns">
-                    <section id="main" class="main">
-                        <h1><?php echo($lang['streamers']);?> - <?php echo($global_platform['name']);?></h1>
-                        <p>This is the list of all the streamers of Opl</p>         
-                    </section>
-                    <section id="streamers" class="streamers">
-                        <section class="streamerslist">
+                    <h1><?php echo($lang['games']);?> - <?php echo($global_platform['name']);?></h1>
+                    <p>This is the list of all the games played at Opl</p>
+                    <section class="gameslist">
                             <?php
-                            $req=mysql_query("SELECT * FROM olp_users WHERE rank='streamer' or rank='admin'");
+                            $req=mysql_query("SELECT * FROM olp_games");
                             while ($results = mysql_fetch_array($req))
                             {
                             ?>
-                            <section class="streamersquare" style="background: <?php if($results['avatar']!=NULL) { echo("url('".$results['avatar']."')");}?>; background-size: cover; ">
-                                <span class="title"><?php echo($results['username']);?></span>
-                                <span>Streamer</span>
-                                <!--<ul>
-                                <?php
-                                $channel = mysql_query("SELECT * FROM olp_channels where owner='".$results['id']."'");
-                                while ($channelquery = mysql_fetch_array($channel))
-                                {
-                                ?>
-                                <li><a href="watch.php?id=<?php echo($channelquery['id']);?>"><?php echo($channelquery['name']);?></a></li>
-                                <?php
-                                }
-                                ?>
-                                </ul>-->
+                            <section class="game" style="background : <?php if($results['poster']!=NULL) { echo("url('".$results['poster']."')");}?>; background-size: cover;">
+                                <span class="title"><?php echo($results['name']);?></span>
+                                <span class="author"><?php echo($results['creator']);?></span>
+                                <span class="website"><a href="<?php echo($results['website']);?>"><?php echo($results['website']);?></a></span>
+                                <span class="description"><?php echo($results['description']);?></span>   
                             </section>
                             <?php
                             }
                             ?>
                         </section>
-                    </section>
                 </div>
             </div>
         </div>

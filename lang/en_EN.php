@@ -24,6 +24,7 @@ $lang['users']="Users";
 $lang['streamer']="Streamer";
 $lang['streamers']="Streamers";
 $lang['livestreams']="Livestreams";
+$lang['games']="Games";
 //Sections
 $lang['myaccount']="My account";
 //Phrases

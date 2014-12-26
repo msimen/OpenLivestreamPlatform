@@ -23,6 +23,7 @@ $lang['profile']="Profil";
 $lang['connected']="Connécté";
 $lang['login']="Se connecter";
 $lang['users']="Users";
+$lang['games']="Jeux";
 //Sections
 $lang['myaccount']="Mon compte";
 //Phrases

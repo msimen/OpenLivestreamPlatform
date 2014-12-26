@@ -29,7 +29,14 @@ include("config.php");
             <ul class="right">
                 <li><a href="streamers.php">Streamers</a></li>
                 <li><a href="livestreams.php">Livestreams</a></li>
-                <li><a href="about.php"><?php echo($lang['about']);?></a></li>
+                <li class="has-dropdown">
+                    <a href="about.php"><?php echo($lang['about']);?> us</a>
+                    <ul class="dropdown">
+                        <li><a href="about.php"><?php echo($lang['about']);?></a></li>
+                        <li><a href="games.php"><?php echo($lang['games']);?></a></li>
+                        <li><a href="streamers.php"><?php echo($lang['streamers']);?></a></li>
+                    </ul>
+                </li>
                 <li class="has-dropdown">
                     <a href="#"><?php echo($lang['channels']);?></a>
                     <ul class="dropdown">
