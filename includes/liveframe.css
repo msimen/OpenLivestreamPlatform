@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+}
+
+.livestream_viewport {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 80;
+}
+
+.livestream_viewport .overlays {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+/*Starting overlay*/
+.livestream_viewport .overlays .starting {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 148, 255, 0.88);
+}
+
+.livestream_viewport .overlays .starting .title {
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 15%;
+}
+
+/*Paused overlay*/
+.livestream_viewport .overlays .pause {
+    padding-top: 15%;
+    width: 100%;
+    height: 100%;
+}
+
+/*Main title*/
+.livestream_viewport .overlays .pause .title {
+    background: #0094ff;
+    padding: 4%;
+}
+
+/*Sidebar*/
+.livestream_viewport .overlays .pause .sidebar {
+    background: #0087e8;
+}
+
+.livestream_viewport .overlays .pause .sidebar p {
+    margin: 0;
+}
+
+.livestream_viewport .overlays .pause .sidebar .livestream_stats {
+    
+}
+
+.livestream_viewport .overlays .pause .sidebar .livestream_stats li span {
+    font-weight: bold;
+}
+
+/*Error overlay*/
+.livestream_viewport .overlays .error {
+    padding-top: 15%;
+    background: #005ca0;
+    background: -moz-radial-gradient(50% 50%, circle cover, #0087E8 0, #005CA0 100%, #FFFFFF 100%);/* FF3.6+ */
+    background: -webkit-radial-gradient(50% 50%, circle cover, #0087E8 0, #005CA0 100%, #FFFFFF 100%);/* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(50% 50%, circle cover, #0087E8 0, #005CA0 100%, #FFFFFF 100%);/* Opera 11.10+ */
+    background: -ms-radial-gradient(50% 50%, circle cover, #0087E8 0, #005CA0 100%, #FFFFFF 100%);/* IE10+ */
+    background: radial-gradient(50% 50%, circle cover, #0087E8 0, #005CA0 100%, #FFFFFF 100%);/* W3C */
+    height: 100%;
+    width: 100%;
+}
+
+/*Title*/
+.livestream_viewport .overlays .error .title {
+    background: #0087e8;
+}
+
+/*Sidebar*/
+.livestream_viewport .overlays .error .sidebar {
+    background: #1897f1;
+}
+
+/*Navbar*/
+.livestream_viewport .navbar {
+    width: 100%;
+    background: #fff rgba(0, 0, 0, 0.88);
+}
+
+.livestream_viewport .navbar .title{
+    
+}
+
+.livestream_viewport .navbar .text {
+    margin-top: 8px;
+    text-align: right;
+}
+

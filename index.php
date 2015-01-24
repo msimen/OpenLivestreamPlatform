@@ -29,6 +29,7 @@ include("config.php");
             <ul class="right">
                 <li><a href="streamers.php">Streamers</a></li>
                 <li><a href="livestreams.php">Livestreams</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li class="has-dropdown">
                     <a href="about.php"><?php echo($lang['about']);?> us</a>
                     <ul class="dropdown">
@@ -100,8 +101,10 @@ include("config.php");
                 </ul>
             </aside>
             <!-- Content -->
+            <!--Home slideshow-->
+            <iframe height="600px;" width="100%" src="includes/slider_home.php" style="border: none; overflow: hidden;">Chargement...</iframe>
             <div class="row">
-              <div class="small-14 small-centered columns">
+              <div class="small-18 small-centered columns">
                 <br/>
                 <!--Alerts-->
                 <div class="alerts">
@@ -133,8 +136,6 @@ include("config.php");
                       <p>If your browser don't support them, please update.</p>
                     </div>-->
                 </div>
-                <!--Home slideshow-->
-                <iframe height="680px" width="100%" src="includes/slider_home.php">Chargement...</iframe>
                 <!--Lives modal-->
                 <div class="lives modals">
                     <div id="livemodal1" class="reveal-modal" data-reveal>

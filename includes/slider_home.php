@@ -23,7 +23,7 @@ include("../config.php");
 						<p><?php echo($global_platform['description']);?></p>
 					</div>
 					<div class="tiltview col">
-						<a href="#"><iframe width="443" height="322" src="../index.php"><img src="../img/1_screen.jpg"/></iframe></a>
+						<a href="#"><iframe width="443" height="322" src="../about.php"><img src="../img/1_screen.jpg"/></iframe></a>
 						<a href="#"><iframe width="443" height="322" src="../watch.php"><img src="../img/2_screen.jpg"/></iframe></a>
 					</div>
 				</li>

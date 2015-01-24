@@ -55,6 +55,11 @@ body {
     color: #f00;
 }
 
+/**/
+.games, .streamers {
+    text-align: center;
+}
+
 /*Games list*/
 .gameslist {
     
@@ -68,6 +73,8 @@ body {
     padding: 5px;
     margin: 2px;
     display: inline-block;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=19, Direction=135, Color=#000000)";/*IE 8*/
+    text-shadow: 4px 4px 19px #000000;/* FF3.5+, Opera 9+, Saf1+, Chrome, IE10 */
 }
 
 .gameslist .game span {

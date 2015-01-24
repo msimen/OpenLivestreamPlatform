@@ -74,16 +74,16 @@ include("config.php");
                 <div class="small-12 small-centered columns">
                     <h1>Watch a livestream - <?php echo($global_platform['name']);?></h1>
                 </div>
-                <div class="small-6 large-7 columns">
-                    <div class="panel">
-                        <h1>Livestream</h1>
-                        <iframe width="560" height="315" src="//www.youtube.com/embed/ZaIfwX3nJ8M" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                                    </div>
-                <div class="small-6 large-5 columns">
-                    <div class="panel">
-                        <h1>Chat</h1>
-                    </div>
+                <div class="small-12 small-centered columns">
+                    <iframe width="100%" height="500px" src="includes/liveframe.php?id=<?php echo($_GET['id']);?>" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-4 columns">
+                    <h4>About the streamer</h4>
+                </div>
+                <div class="small-8 columns">
+                    <h4>About the livestream</h4>
                 </div>
             </div>
         </div>
