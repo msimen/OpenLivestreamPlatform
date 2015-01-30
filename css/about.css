@@ -1,0 +1,57 @@
+body {
+    
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.content article {
+    padding-top: 5%;
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    height: 50%;
+    max-height: 50%;
+}
+
+.streamers {
+    background: -moz-radial-gradient(50% 50%, circle cover, #0087E8 25%, #003F6E 100%);/* FF3.6+ */
+    background: -webkit-radial-gradient(50% 50%, circle cover, #0087E8 25%, #003F6E 100%);/* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(50% 50%, circle cover, #0087E8 25%, #003F6E 100%);/* Opera 11.10+ */
+    background: -ms-radial-gradient(50% 50%, circle cover, #0087E8 25%, #003F6E 100%);/* IE10+ */
+    background: radial-gradient(50% 50%, circle cover, #0087E8 25%, #003F6E 100%);/* W3C */
+    background-attachment: fixed;
+}
+
+.games {
+    
+}
+
+.contact {
+    background: #0061a7;
+}
+
+.contact .row {
+    background: #fff;
+}
+
+/*Navbar*/
+footer .navbar {
+    width: 100%;
+    background: #fff rgba(0, 0, 0, 0.88);
+}
+
+footer .navbar .title{
+    
+}
+
+footer .navbar .text {
+    margin-top: 8px;
+    text-align: right;
+}

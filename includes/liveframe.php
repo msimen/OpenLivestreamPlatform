@@ -58,18 +58,22 @@ if(isset($_GET["liveid"])){
                 <section class="error">
                     <div class="container">
                         <div class="row">
-                            <div class="large-4 columns sidebar">
-                                <h2>Want to report this error ?</h2>
-                                <p>Use this form to report this error</p>
-                                <form action="../account/report.php?type=livestream" method="post">
-                                    <input type="text" name="livestream" placeholder="Enter the livestream you are watching">
-                                    <textarea name="description" placeholder="Describes the error in some paragraphs"></textarea>
-                                    <input type="submit" value="Send this report">
-                                </form>
+                            <div class="large-4 small-12 columns sidebar">
+                                <div class="container">
+                                    <h2>Want to report this error ?</h2>
+                                    <p>Use this form to report this error</p>
+                                    <form action="../account/report.php?type=livestream" method="post">
+                                        <input type="text" name="livestream" placeholder="Enter the livestream you are watching">
+                                        <textarea name="description" placeholder="Describes the error in some paragraphs"></textarea>
+                                        <input type="submit" value="Send this report">
+                                    </form> 
+                                </div>
                             </div>
-                            <div class="large-6 columns title">
-                                <h1>Ooops ! Something goes wrong</h1>
-                                <h4>Opl has got an error. You can reload the page, or report this error</h4>
+                            <div class="large-6 small-12 columns title">
+                                <div class="container">
+                                    <h1>Ooops ! Something goes wrong</h1>
+                                    <h4>Opl has got an error. You can reload the page, or report this error</h4>
+                                </div>
                             </div> 
                         </div> 
                     </div>

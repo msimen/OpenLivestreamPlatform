@@ -68,6 +68,7 @@ body {
     background: -o-radial-gradient(50% 50%, circle cover, #0087E8 0, #005CA0 100%, #FFFFFF 100%);/* Opera 11.10+ */
     background: -ms-radial-gradient(50% 50%, circle cover, #0087E8 0, #005CA0 100%, #FFFFFF 100%);/* IE10+ */
     background: radial-gradient(50% 50%, circle cover, #0087E8 0, #005CA0 100%, #FFFFFF 100%);/* W3C */
+    background-attachment: fixed;
     height: 100%;
     width: 100%;
 }

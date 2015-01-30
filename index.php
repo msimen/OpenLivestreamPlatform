@@ -136,34 +136,61 @@ include("config.php");
                       <p>If your browser don't support them, please update.</p>
                     </div>-->
                 </div>
-                <!--Lives modal-->
-                <div class="lives modals">
-                    <div id="livemodal1" class="reveal-modal" data-reveal>
-                      <h2>Name of your livestream</h2>
-                      <p class="lead">By <b>Yourusername</b></p>
-                      <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-                      <a class="close-reveal-modal">&#215;</a>
+                <!--Livestreams list-->
+                <div class="lives list">
+                    <div class="container">
+                        <div class="row">
+                            <?php
+                            $req = mysql_query('SELECT * FROM olp_livestreams ORDER BY id LIMIT 0, 10');
+                            while ($global_live_list = mysql_fetch_array($req))
+                            {
+                            ?>
+                            <div id="live_<?php echo($global_live_list['id']);?>" class="small-4 columns">
+                                <h2><?php echo($global_live_list['name'])?></h2>
+                                <?php
+                                    $global_live_list_streamer = mysql_fetch_array(mysql_query('SELECT username FROM olp_users WHERE id="'.$global_live_list['streamer'].'"'));
+                                ?>
+                                <p>By <b><?php echo($global_live_list_streamer['username']);?></b></p>
+                                <a href="#">More about this live</a>
+                            </div>
+                            <?php
+                            }
+                            ?>
+                        </div>    
                     </div>
                 </div>
-                <!--Live list-->
-                <div class="lives list">
-                    <div class="row" data-equalizer>
-                        <?php
-                        $req = mysql_query('SELECT * FROM olp_livestreams ORDER BY id LIMIT 0, 10');
-                        while ($global_live_list = mysql_fetch_array($req))
-                        {
-                        ?>
-                        <div id="live_<?php echo($global_live_list['id']);?>" class="large-6 columns panel" data-equalizer-watch>
-                            <h2><?php echo($global_live_list['name'])?></h2>
-                            <?php
-                                $global_live_list_streamer = mysql_fetch_array(mysql_query('SELECT username FROM olp_users WHERE id="'.$global_live_list['streamer'].'"'));
-                            ?>
-                            <p class="lead">By <b><?php echo($global_live_list_streamer['username']);?></b></p>
-                            <a href="#" data-reveal-id="livemodal1">More about this live</a>
-                        </div>
-                        <?php
-                        }
-                        ?>
+                <!--Latest news-->
+                <div class="news">
+                    <div class="container">
+                        <h2>The latest news</h2>
+                        <p>This is the latest news published on Opl</p>
+                        <section class="list_news">
+                            <article class="news_article">
+                                <div class="row">
+                                    <div class="small-4 columns">
+                                        <h4>About the author</h4>
+                                        <div class="row">
+                                            <div class="large-8 small-12 columns">
+                                                <figure class="author-avatar">
+                                                    <img src="img/users/avatar.php?u=JORYS55" alt="Author's avatar">
+                                                    <figcaption></figcaption>
+                                                </figure>
+                                                </div>
+                                            <div class="large-4 small-12 columns">
+                                                <h4>JORYS55</h4>
+                                                <p>Streamer at Opl</p>
+                                            </div>
+                                        </div>    
+                                    </div>  
+                                    <div class="small-8 columns">
+                                        <div class="container">
+                                            <h2>Lorem ipsum dolor sit amet</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet feugiat nibh sed faucibus. Morbi sodales sem nisl, non consequat elit vestibulum nec. Suspendisse hendrerit, nulla eu eleifend ultricies, elit nunc dapibus tortor, quis vestibulum justo dui sit amet ipsum. Suspendisse sed tincidunt ante. Nullam a mollis quam. Aliquam et urna vitae erat sollicitudin scelerisque. Donec id nulla purus. Curabitur ac quam sed nisl volutpat ultrices ut in arcu. Sed at dolor egestas, placerat neque sed, cursus enim. Ut orci libero, sollicitudin et ipsum nec, fringilla porta purus.</p>
+                                        </div>
+                                    </div>   
+                                </div>         
+                            </article>         
+                        </section>
                     </div>
                 </div>
               </div>

@@ -80,6 +80,7 @@ include("config.php");
                         <input type="text" name="name" placeholder="Your name" required>
                         <input type="email" name="email" placeholder="Your contact email" required>
                         <textarea name="description" placeholder="Why you would like to contact us" required></textarea>
+                        <input type="submit" value="Contact">
                     </form>
                 </div><br/>
                 <div class="small-12 columns">
