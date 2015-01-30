@@ -29,6 +29,10 @@ body {
     background-attachment: fixed;
 }
 
+.streamers .row {
+    background: #fff;
+}
+
 .games {
     
 }
@@ -53,5 +57,5 @@ footer .navbar .title{
 
 footer .navbar .text {
     margin-top: 8px;
-    text-align: right;
+    
 }
