@@ -119,7 +119,8 @@ if (imagesy($im) > 32) {
     imagecopyresized($av, $im, $p + $s * $g * 2 + $s * 28, $p + $s * 8 + $s * 12, 12, 52, $s * 4, $s * 12, 4, 12);
     imagecopyresized($av, $im, $p + $s * $g * 2 + $s * 32, $p + $s * 8 + $s * 12, 12, 36, $s * 4, $s * 12, 4, 12);
     imagecopyresized($av, $im, $p + $s * $g * 3 + $s * 42, $p + $s * 8 +$s * 12, 8, 52, $s * 4, $s * 12, 4, 12);
-} else {
+}
+else {
     $mi = imagecreatetruecolor(64, 32);
     imagecopyresampled($mi, $im, 0, 0, 64 - 1, 0, 64, 32, -64, 32);
     imagesavealpha($mi, true);

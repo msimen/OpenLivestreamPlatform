@@ -193,6 +193,7 @@ include("config.php");
                         </section>
                     </div>
                 </div>
+                <?php include("includes/footer.php");?>
               </div>
             </div>
             <!-- Close the off-canevas menu -->

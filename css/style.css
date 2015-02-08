@@ -1,6 +1,21 @@
 body {
 }
 
+/*Footer Navbar*/
+footer .navbar {
+    width: 100%;
+    background: #fff rgba(0, 0, 0, 0.88);
+}
+
+footer .navbar .title{
+    
+}
+
+footer .navbar .text {
+    margin-top: 8px;
+    
+}
+
 /*Channels list*/
 .channelslistcomponent {
     height : 150px;
